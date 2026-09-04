@@ -1,0 +1,279 @@
+:root {
+    --color-bg: #2a1116;
+    --color-bg-alt: #180a0d;
+    --color-panel: #35161c;
+    --color-gold: #c9a24a;
+    --color-gold-light: #e6cd8e;
+    --color-text: #f4e9dc;
+    --color-text-muted: #c9b3a6;
+    --color-rule: rgba(201, 162, 74, 0.35);
+
+    --font-display: "Cormorant Garamond", serif;
+    --font-body: "Inter", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+.hero {
+    background: radial-gradient(ellipse at 50% -10%, #4a1c22 0%, var(--color-bg-alt) 65%);
+    padding: 5rem 1.5rem 4rem;
+    text-align: center;
+}
+
+.hero__eyebrow {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    color: var(--color-gold-light);
+    margin: 0 0 1.25rem;
+}
+
+.hero__title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    line-height: 1.08;
+    margin: 0;
+    color: var(--color-text);
+}
+
+.hero__signature {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+    color: var(--color-gold-light);
+    margin: 0.4rem 0 1.5rem;
+}
+
+.hero__rule {
+    width: 120px;
+    height: 1px;
+    margin: 1.5rem auto;
+    background: linear-gradient(to right, transparent, var(--color-gold), transparent);
+}
+
+.hero__sub {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--color-text-muted);
+    max-width: 32ch;
+    margin: 0 auto;
+}
+
+.section {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+
+.section--dark {
+    max-width: none;
+    background-color: var(--color-panel);
+}
+
+.section--dark > * {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section__title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 2rem;
+    color: var(--color-gold-light);
+    margin: 0 0 1.5rem;
+    border-bottom: 1px solid var(--color-rule);
+    padding-bottom: 0.75rem;
+}
+
+.section__body p {
+    margin: 0 0 1rem;
+    color: var(--color-text);
+}
+
+.section__body p.drop::first-letter {
+    font-family: var(--font-display);
+    font-size: 3.2rem;
+    line-height: 0.7;
+    float: left;
+    padding: 0.1rem 0.5rem 0 0;
+    color: var(--color-gold);
+}
+
+u {
+    text-decoration-color: var(--color-gold);
+}
+
+.playbill {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.playbill__item {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px dashed var(--color-rule);
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--color-text);
+}
+
+.playbill__item:last-child {
+    border-bottom: none;
+}
+
+.playbill__mark {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-gold);
+    flex-shrink: 0;
+}
+
+.steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: step;
+    border-left: 1px solid var(--color-rule);
+}
+
+.steps__item {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    padding: 0.9rem 0 0.9rem 1.75rem;
+}
+
+.steps__num {
+    position: absolute;
+    left: -0.62rem;
+    background-color: var(--color-bg);
+    color: var(--color-gold);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.95rem;
+    width: 1.25rem;
+    text-align: center;
+}
+
+.steps__text {
+    font-size: 1.05rem;
+    color: var(--color-text);
+}
+
+.calc__intro {
+    color: var(--color-text-muted);
+    max-width: 55ch;
+    margin: 0 0 2rem;
+}
+
+.calc {
+    display: grid;
+    gap: 1.25rem;
+    max-width: 420px;
+}
+
+.calc__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.calc__field label {
+    font-size: 0.85rem;
+    color: var(--color-gold-light);
+}
+
+.calc__field select,
+.calc__field input {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    padding: 0.65rem 0.75rem;
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-rule);
+    border-radius: 4px;
+    color: var(--color-text);
+}
+
+.calc__field select:focus,
+.calc__field input:focus,
+.calc__button:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+}
+
+.calc__button {
+    justify-self: start;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-gold);
+    color: var(--color-bg-alt);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.calc__button:hover {
+    background-color: var(--color-gold-light);
+}
+
+.calc__result {
+    border-top: 1px solid var(--color-rule);
+    padding-top: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+.calc__price {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    color: var(--color-gold-light);
+    margin: 0;
+}
+
+.calc__note {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    margin: 0.35rem 0 0;
+}
+
+.footer {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    background-color: var(--color-bg-alt);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}

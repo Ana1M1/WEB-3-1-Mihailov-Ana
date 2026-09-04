@@ -1,38 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ro">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Teatrul Național de Operă și Balet „Maria Bieșu”</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="background-color: bisque;">
-    <h1 style="text-align: center;">
-        Teatrul National de Operă si Balet „Maria Bieșu” </h1>
+<body>
 
-    <h2>Istoric</h2>
-    <p>
-        <u>Fondat în anul 1957</u>, tetrul este una din cele mai importante institutii culturale din țară.
-    </p>
+    <header class="hero">
+        <div class="hero__rule" aria-hidden="true"></div>
+        <p class="hero__eyebrow"> În Chișinău din 1957</p>
+        <h1 class="hero__title">Teatrul Național de<br>Operă și Balet</h1>
+        <p class="hero__signature">„Maria Bieșu”</p>
+        <div class="hero__rule" aria-hidden="true"></div>
+        <p class="hero__sub">Scena unde vocea și mișcarea devin poveste.</p>
+    </header>
 
-    <h2>Spectacole</h2>
-    <ul type="Circle">
-        <li><i>La Traviata</i></li>
-        <li><i>Carmen</i></li>
-        <li><i>Lacul Lebedelor</i></li>
-    </ul>
+    <main>
 
-     <h2>Pasii pentru a participa la spectacol</h2>
-     
-    <ol type="I">
-        <li><i>Cumpara bilet</i></li>
-        <li><i>Ajungi la teatru</i></li>
-        <li><i>Ocupi locul</i></li>
-        <li><i>urmaresti spectacolul</i></li>
-    </ol>
+        <section class="section" id="istoric">
+            <h2 class="section__title">Istoric</h2>
+            <div class="section__body">
+                <p class="drop"><u>Fondat în anul 1957</u>, teatrul este una din cele mai importante instituții
+                    culturale din țară. Timp de aproape șapte decenii, scena sa a găzduit generații de soliști,
+                    dirijori și coregrafi care au dus opera și baletul moldovenesc dincolo de granițele țării.</p>
+                <p>Astăzi, instituția poartă numele sopranei Maria Bieșu, artistă emerită a cărei voce a definit
+                    teatrul pentru o generație întreagă de spectatori.</p>
+            </div>
+        </section>
 
+        <section class="section section--dark" id="spectacole">
+            <h2 class="section__title">Spectacole</h2>
+            <ul class="playbill">
+                <li class="playbill__item">
+                    <span class="playbill__mark" aria-hidden="true"></span>
+                    <i>La Traviata</i>
+                </li>
+                <li class="playbill__item">
+                    <span class="playbill__mark" aria-hidden="true"></span>
+                    <i>Carmen</i>
+                </li>
+                <li class="playbill__item">
+                    <span class="playbill__mark" aria-hidden="true"></span>
+                    <i>Lacul Lebedelor</i>
+                </li>
+            </ul>
+        </section>
 
+        <section class="section" id="pasi">
+            <h2 class="section__title">Pașii pentru a participa la spectacol</h2>
+            <ol class="steps">
+                <li class="steps__item">
+                    <span class="steps__num">I</span>
+                    <span class="steps__text"><i>Cumperi biletul</i></span>
+                </li>
+                <li class="steps__item">
+                    <span class="steps__num">II</span>
+                    <span class="steps__text"><i>Ajungi la teatru</i></span>
+                </li>
+                <li class="steps__item">
+                    <span class="steps__num">III</span>
+                    <span class="steps__text"><i>Ocupi locul</i></span>
+                </li>
+                <li class="steps__item">
+                    <span class="steps__num">IV</span>
+                    <span class="steps__text"><i>Urmărești spectacolul</i></span>
+                </li>
+            </ol>
+        </section>
+
+        <section class="section section--dark" id="calculator">
+            <h2 class="section__title">Selectează nr de locuri</h2>
+            <p class="calc__intro">Alege spectacolul și numărul de persoane pentru a vedea costul total. Grupurile
+                mai mari beneficiază de reducere.</p>
+
+            <div class="calc">
+                <div class="calc__field">
+                    <label for="spectacol">Spectacol</label>
+                    <select id="spectacol">
+                        <option value="180">La Traviata — 180 MDL / bilet</option>
+                        <option value="160">Carmen — 160 MDL / bilet</option>
+                        <option value="150">Lacul Lebedelor — 150 MDL / bilet</option>
+                    </select>
+                </div>
+
+                <div class="calc__field">
+                    <label for="persoane">Număr de persoane</label>
+                    <input type="number" id="persoane" min="1" max="50" value="2" step="1">
+                </div>
+
+                <button type="button" id="calculeazaBtn" class="calc__button">Calculează prețul</button>
+
+                <div class="calc__result" id="rezultat" aria-live="polite">
+                    <p class="calc__price">— MDL</p>
+                    <p class="calc__note">Completează datele de mai sus.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Teatrul Național de Operă și Balet „Maria Bieșu” · Chișinău</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
