@@ -228,7 +228,7 @@ u {
 }
 
 .calc__button {
-    justify-self: start;
+    justify-self: end;
     font-family: var(--font-body);
     font-weight: 600;
     font-size: 0.95rem;
