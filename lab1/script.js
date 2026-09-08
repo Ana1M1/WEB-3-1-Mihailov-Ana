@@ -18,8 +18,6 @@ function calcul(nrPersoane, pretUnitar) {
     };
 }
 
-console.log(calcul(4, 5));
-
 document.addEventListener("DOMContentLoaded", function () {
     const selectSpectacol = document.getElementById("spectacol");
     const inputPersoane = document.getElementById("persoane");
@@ -51,8 +49,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     btn.addEventListener("click", afiseazaRezultat);
 
+
     selectSpectacol.addEventListener("change", afiseazaRezultat);
     inputPersoane.addEventListener("input", afiseazaRezultat);
 
     afiseazaRezultat();
 });
+
+    function info() {
+        alert("Numărul de locuri a fost confirmat");
+    }
