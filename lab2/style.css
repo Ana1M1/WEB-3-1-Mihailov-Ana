@@ -94,16 +94,27 @@ dd {
 .emblem { font-size: 24px; }
 
 .flag-norway {
+    border-collapse: collapse;
     width: 220px;
     height: 160px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
-.flag-norway td {
-    padding: 0;
-}
-.flag-norway tr.r1 { height: 60px; }
-.flag-norway tr.r-cross-w { height: 10px; }
-.flag-norway tr.r-cross-b { height: 20px; }
-.white { background-color: #ffffff; }
+
+.bg-red { background-color: #BA0C2F; }
+.bg-white { background-color: #FFFFFF; }
+.bg-blue { background-color: #00205B; }
+
+.w-red-left { width: 60px; }
+.w-white-v { width: 10px; }
+.w-blue-v { width: 20px; }
+.w-red-right { width: 120px; }
+
+.h-top { height: 60px; }
+.h-white-h { height: 10px; }
+.h-blue-h { height: 20px; }
+.h-bottom { height: 60px; }
 
 .flag-sweden {
     width: 240px;
