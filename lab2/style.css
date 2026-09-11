@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #2c3e50;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    background-color: #34495e;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    background-color: #1abc9c;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+.country-card {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+dt {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-top: 10px;
+}
+
+dd {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.back-top {
+    display: inline-block;
+    margin-top: 15px;
+    color: #3498db;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.flag {
+    border-collapse: collapse;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+}
+
+.flag-moldova {
+    width: 240px;
+    height: 140px;
+}
+.flag-moldova td {
+    width: 33.33%;
+    text-align: center;
+}
+.blue { background-color: #003399; }
+.yellow { background-color: #FFD100; }
+.red { background-color: #CC0000; }
+.emblem { font-size: 24px; }
+
+.flag-norway {
+    width: 220px;
+    height: 160px;
+}
+.flag-norway td {
+    padding: 0;
+}
+.flag-norway tr.r1 { height: 60px; }
+.flag-norway tr.r-cross-w { height: 10px; }
+.flag-norway tr.r-cross-b { height: 20px; }
+.white { background-color: #ffffff; }
+
+.flag-sweden {
+    width: 240px;
+    height: 150px;
+}
+.sw-blue { background-color: #006AA7; }
+.sw-yellow { background-color: #FECC00; }
+.flag-sweden .row-top, .flag-sweden .row-bottom { height: 60px; }
+.flag-sweden .row-middle { height: 30px; }
+.flag-sweden td:nth-child(1) { width: 70px; }
+.flag-sweden td:nth-child(2) { width: 30px; }
+.flag-sweden td:nth-child(3) { width: 140px; }
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+.comparison-table th, .comparison-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+.comparison-table th {
+    background-color: #f2f2f2;
+}
+.comparison-table tfoot td {
+    font-style: italic;
+    font-size: 0.85em;
+    color: #666;
+}
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
