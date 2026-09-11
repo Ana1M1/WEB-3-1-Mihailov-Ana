@@ -5,6 +5,8 @@ body {
     background-color: #f4f6f9;
     color: #333;
     line-height: 1.6;
+    background: linear-gradient(135deg, #f6fcc3 0%, #8ec5fc 100%);
+    min-height: 100vh;
 }
 
 header {
@@ -115,6 +117,11 @@ dd {
 .h-white-h { height: 10px; }
 .h-blue-h { height: 20px; }
 .h-bottom { height: 60px; }
+
+#moldova {
+    background-color: #fffdf0;
+    border-left: 5px solid #FFD100;
+}
 
 .flag-sweden {
     width: 240px;
