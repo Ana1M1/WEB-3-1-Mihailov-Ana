@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     navLinks.forEach(link => {
         link.addEventListener("click", function (e) {
             const href = this.getAttribute("href");
-            
+
             if (href.startsWith("#")) {
                 e.preventDefault();
                 const targetElement = document.querySelector(href);
