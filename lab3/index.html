@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piatra, Hârtia, Foarfeca - Cosy Edition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="card-joc">
+        <header>
+            <h1>Piatra, Hârtia, Foarfeca</h1>
+            <p class="subtitlu">Alege o opțiune și joacă-te liniștit!</p>
+        </header>
+
+        <div class="zona-butoane">
+            <button id="btn-piatra" class="btn-alegere">
+                <span class="emoji">🗿</span>
+                <span>Piatra</span>
+            </button>
+            <button id="btn-hartia" class="btn-alegere">
+                <span class="emoji">📃</span>
+                <span>Hârtia</span>
+            </button>
+            <button id="btn-foarfeca" class="btn-alegere">
+                <span class="emoji">✂️</span>
+                <span>Foarfeca</span>
+            </button>
+        </div>
+
+        <div class="zona-duel">
+            <div class="caseta-alegere">
+                <span class="eticheta">Tu:</span>
+                <span id="alegere-jucator" class="valoare-alegere">-</span>
+            </div>
+            <div class="versus">VS</div>
+            <div class="caseta-alegere">
+                <span class="eticheta">Calculator:</span>
+                <span id="alegere-calc" class="valoare-alegere">-</span>
+            </div>
+        </div>
+
+        <div class="zona-rezultat">
+            <h2 id="rezultat-runda">Succes la joc!</h2>
+        </div>
+
+        <div class="panou-scor">
+            <div class="coloana-scor">
+                <span class="numar-scor" id="scor-jucator">0</span>
+                <span class="titlu-scor">Jucător</span>
+            </div>
+            <div class="coloana-scor">
+                <span class="numar-scor" id="scor-egala">0</span>
+                <span class="titlu-scor">Egalități</span>
+            </div>
+            <div class="coloana-scor">
+                <span class="numar-scor" id="scor-calc">0</span>
+                <span class="titlu-scor">Calculator</span>
+            </div>
+        </div>
+
+        <footer>
+            <p id="mesaj-lider" class="status-joc">Să începem!</p>
+            <p class="runde-info">Runde totale jucate: <span id="runde-totale">0</span></p>
+            <button id="btn-reset" class="btn-reset">!!! Resetează jocul !!!</button>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
