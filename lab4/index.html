@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Laborator 4 – Liste și metodele Array</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  
+  <div class="card">
+    <h1>Lista de cumpărături</h1>
+
+    <input type="text" id="produs" placeholder="Introdu un produs">
+
+    <div class="butoane">
+      <button id="btnSfarsit">Adaugă la sfârșit</button>
+      <button id="btnInceput">Adaugă la început</button>
+      <button id="btnPrimul" class="sterge">Șterge primul</button>
+      <button id="btnUltimul" class="sterge">Șterge ultimul</button>
+    </div>
+
+    <div id="lista"></div>
+  </div>
+
+ 
+  <div class="card">
+    <h1 class="centru">CATALOG ELECTRONIC</h1>
+    <p class="numar">Număr de elevi: <span id="numar">0</span></p>
+    <div id="catalog"></div>
+
+    <section>
+      <h2>Adaugă elev</h2>
+      <label>Nume: <input type="text" id="nume"></label>
+      <label>Vârsta: <input type="number" id="varsta" min="1"></label>
+      <label>Nota: <input type="number" id="nota" min="1" max="10"></label>
+      <button id="btnAdauga">Adaugă elev</button>
+    </section>
+
+    <section>
+      <h2>Șterge elev</h2>
+      <label>Numele elevului: <input type="text" id="numeSterge"></label>
+      <button id="btnSterge" class="sterge">Șterge elev</button>
+      <p id="mesajSterge" class="mesaj"></p>
+    </section>
+
+    <section>
+      <h2>Caută elev</h2>
+      <label>Caută elev: <input type="text" id="numeCauta"></label>
+      <button id="btnCauta">Caută</button>
+      <div id="rezultat" class="mesaj"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
