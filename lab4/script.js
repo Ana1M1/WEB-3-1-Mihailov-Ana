@@ -1,63 +1,58 @@
-
-let fructe = ["Măr", "Pară", "Banana", "Portocală", "Kiwi"];
+const fructe = ["Măr", "Pară", "Banana", "Portocală", "Kiwi"];
 console.log(fructe);
 console.log("primul:", fructe[0]);
 console.log("ultimul:", fructe[fructe.length - 1]);
 console.log("lungime:", fructe.length);
 
-
-
-let orase = ["Chișinău", "Bălți", "Cahul"];
+const orase = ["Chișinău", "Bălți", "Cahul"];
 orase.push("Orhei");
 orase.unshift("Soroca");
 orase.pop();
 orase.shift();
 console.log(orase);
 
-
-
-let produse = ["Pâine", "Lapte", "Ouă"];
-let input = document.getElementById("produs");
-let lista = document.getElementById("lista");
+const produse = ["Pâine", "Lapte", "Ouă"];
+const input = document.getElementById("produs");
+const lista = document.getElementById("lista");
 
 function afiseazaLista() {
-  if (produse.length == 0) {
-    lista.innerHTML = "<span class='gol'>Lista este goală!</span>";
+  lista.textContent = "";
+  if (produse.length === 0) {
+    const spanGol = document.createElement("span");
+    spanGol.className = "gol";
+    spanGol.textContent = "Lista este goală!";
+    lista.appendChild(spanGol);
   } else {
     lista.textContent = produse.join(" | ");
   }
 }
 
-document.getElementById("btnSfarsit").onclick = function () {
-  let text = input.value.trim();
-  if (text != "") {
-    produse.push(text);
+function adaugaProdus(metoda) {
+  const text = input.value.trim();
+  if (text !== "") {
+    if (metoda === "sfarsit") produse.push(text);
+    else produse.unshift(text);
   }
   input.value = "";
   afiseazaLista();
-};
+}
 
-document.getElementById("btnInceput").onclick = function () {
-  let text = input.value.trim();
-  if (text != "") {
-    produse.unshift(text);
-  }
-  input.value = "";
-  afiseazaLista();
-};
+document.getElementById("btnSfarsit").onclick = () => 
+  adaugaProdus("sfarsit");
+document.getElementById("btnInceput").onclick = () => 
+  adaugaProdus("inceput");
 
-document.getElementById("btnPrimul").onclick = function () {
+document.getElementById("btnPrimul").onclick = () => {
   produse.shift();
   afiseazaLista();
 };
 
-document.getElementById("btnUltimul").onclick = function () {
+document.getElementById("btnUltimul").onclick = () => {
   produse.pop();
   afiseazaLista();
 };
 
 afiseazaLista();
-
 
 let elevi = [
   { nume: "Popescu Ana", varsta: 17, nota: 9 },
@@ -65,41 +60,44 @@ let elevi = [
   { nume: "Ciobanu Maria", varsta: 17, nota: 10 }
 ];
 
-let catalog = document.getElementById("catalog");
-let numar = document.getElementById("numar");
-let rezultat = document.getElementById("rezultat");
-let mesajSterge = document.getElementById("mesajSterge");
+const catalog = document.getElementById("catalog");
+const numar = document.getElementById("numar");
+const rezultat = document.getElementById("rezultat");
+const mesajSterge = document.getElementById("mesajSterge");
 
-function afiseazaElevi() {
-  catalog.innerHTML = "";
+const afiseazaElevi = () => {
+  catalog.textContent = "";
   numar.textContent = elevi.length;
 
-  elevi.forEach(function (elev, i) {
-    let div = document.createElement("div");
+  elevi.forEach((elev, i) => {
+    const div = document.createElement("div");
     div.className = "elev";
-    div.innerHTML = "<strong>" + (i + 1) + ". " + elev.nume + "</strong>" +
-      "Vârsta: " + elev.varsta + "<br>Nota: " + elev.nota;
+
+    const strong = document.createElement("strong");
+    strong.textContent = `${i + 1}. ${elev.nume}`;
+
+    div.appendChild(strong);
+    div.append(`Vârsta: ${elev.varsta}`);
+    div.appendChild(document.createElement("br"));
+    div.append(`Nota: ${elev.nota}`);
+
     catalog.appendChild(div);
   });
-}
+};
 
-function cauta(nume) {
-  return elevi.find(function (e) {
-    return e.nume.toLowerCase() == nume.toLowerCase();
-  });
-}
+const cauta = (nume) => elevi.find(e => e.nume.toLowerCase() === nume.toLowerCase());
 
-document.getElementById("btnAdauga").onclick = function () {
-  let nume = document.getElementById("nume").value.trim();
-  let varsta = Number(document.getElementById("varsta").value);
-  let nota = Number(document.getElementById("nota").value);
+document.getElementById("btnAdauga").onclick = () => {
+  const nume = document.getElementById("nume").value.trim();
+  const varsta = Number(document.getElementById("varsta").value);
+  const nota = Number(document.getElementById("nota").value);
 
-  if (nume == "" || varsta <= 0 || nota < 1 || nota > 10) {
+  if (!nume || varsta <= 0 || nota < 1 || nota > 10) {
     alert("Completează corect toate câmpurile!");
     return;
   }
 
-  elevi.push({ nume: nume, varsta: varsta, nota: nota });
+  elevi.push({ nume, varsta, nota });
 
   document.getElementById("nume").value = "";
   document.getElementById("varsta").value = "";
@@ -107,9 +105,9 @@ document.getElementById("btnAdauga").onclick = function () {
   afiseazaElevi();
 };
 
-document.getElementById("btnSterge").onclick = function () {
-  let nume = document.getElementById("numeSterge").value.trim();
-  let elev = cauta(nume);
+document.getElementById("btnSterge").onclick = () => {
+  const nume = document.getElementById("numeSterge").value.trim();
+  const elev = cauta(nume);
 
   if (elev) {
     elevi.splice(elevi.indexOf(elev), 1);
@@ -123,17 +121,27 @@ document.getElementById("btnSterge").onclick = function () {
   }
 };
 
-document.getElementById("btnCauta").onclick = function () {
-  let nume = document.getElementById("numeCauta").value.trim();
-  let elev = cauta(nume);
+document.getElementById("btnCauta").onclick = () => {
+  const nume = document.getElementById("numeCauta").value.trim();
+  const elev = cauta(nume);
+
+  rezultat.textContent = "";
+  const span = document.createElement("span");
 
   if (elev) {
-    rezultat.innerHTML = "<span class='ok'>Elev găsit!</span><br>" +
-      "Nume: " + elev.nume + "<br>" +
-      "Vârsta: " + elev.varsta + "<br>" +
-      "Nota: " + elev.nota;
+    span.className = "ok";
+    span.textContent = "Elev găsit!";
+    rezultat.appendChild(span);
+    rezultat.appendChild(document.createElement("br"));
+    rezultat.append(`Nume: ${elev.nume}`);
+    rezultat.appendChild(document.createElement("br"));
+    rezultat.append(`Vârsta: ${elev.varsta}`);
+    rezultat.appendChild(document.createElement("br"));
+    rezultat.append(`Nota: ${elev.nota}`);
   } else {
-    rezultat.innerHTML = "<span class='eroare'>Elevul nu a fost găsit!</span>";
+    span.className = "eroare";
+    span.textContent = "Elevul nu a fost găsit!";
+    rezultat.appendChild(span);
   }
 };
 
