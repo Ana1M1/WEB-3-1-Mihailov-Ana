@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista studenților</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Lista studenților</h1>
+
+        <section class="card-section">
+            <h2>Adaugă student</h2>
+            <form id="studentForm">
+                <input type="text" id="name" placeholder="Nume" required>
+                <input type="text" id="group" placeholder="Grupa" required>
+                <input type="number" id="age" placeholder="Vârsta" min="14" max="100" required>
+                <input type="text" id="specialty" placeholder="Specialitatea" required>
+                <button type="submit">Adaugă</button>
+            </form>
+        </section>
+
+        <section class="card-section">
+            <h2>Aranjare</h2>
+            <div class="control-row">
+                <span class="control-label">justify-content</span>
+                <div class="btn-group" data-property="justifyContent">
+                    <button type="button" class="flex-btn active" data-value="flex-start">flex-start</button>
+                    <button type="button" class="flex-btn" data-value="center">center</button>
+                    <button type="button" class="flex-btn" data-value="flex-end">flex-end</button>
+                    <button type="button" class="flex-btn" data-value="space-between">space-between</button>
+                    <button type="button" class="flex-btn" data-value="space-around">space-around</button>
+                    <button type="button" class="flex-btn" data-value="space-evenly">space-evenly</button>
+                </div>
+            </div>
+
+            <div class="control-row">
+                <span class="control-label">align-items</span>
+                <div class="btn-group" data-property="alignItems">
+                    <button type="button" class="flex-btn active" data-value="stretch">stretch</button>
+                    <button type="button" class="flex-btn" data-value="flex-start">flex-start</button>
+                    <button type="button" class="flex-btn" data-value="center">center</button>
+                    <button type="button" class="flex-btn" data-value="flex-end">flex-end</button>
+                    <button type="button" class="flex-btn" data-value="baseline">baseline</button>
+                </div>
+            </div>
+
+            <div class="control-row">
+                <span class="control-label">flex-wrap</span>
+                <div class="btn-group" data-property="flexWrap">
+                    <button type="button" class="flex-btn active" data-value="wrap">wrap</button>
+                    <button type="button" class="flex-btn" data-value="nowrap">nowrap</button>
+                </div>
+            </div>
+
+            <div class="control-row">
+                <span class="control-label">gap: <span id="gapValue">16</span>px</span>
+                <input type="range" id="gapRange" min="0" max="200" value="16">
+            </div>
+        </section>
+
+        <p class="counter">Număr de studenți: <span id="studentCount">0</span></p>
+
+        <div id="studentsContainer" class="students-grid"></div>
+        
+        <p id="emptyMessage" class="empty-message hidden">Nu există niciun student în listă.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
