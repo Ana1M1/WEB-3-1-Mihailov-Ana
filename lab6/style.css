@@ -1,0 +1,42 @@
+body {
+ 
+  background: linear-gradient(0deg,rgb(3, 27, 92) 0%, rgb(82, 77, 146) 100%);
+  height: 100vh;
+}
+
+h1 {
+  font-weight: 700;
+  color: #ccd1ac;
+}
+
+.form-card {
+  border: 0;
+  box-shadow: 0 2px 10px rgba(31, 58, 95, 0.08);
+}
+
+.card-elev {
+  border: 0;
+  box-shadow: 0 2px 10px rgba(65, 98, 131, 0.08);
+}
+
+.card-elev .card-title {
+  color: #161a20;
+  font-weight: 600;
+}
+
+.card-elev .email {
+  word-break: break-all;
+}
+
+.card-elev.in-editare {
+  border-top-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.35);
+}
+
+.mesaj-gol {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #3b568b;
+  background: #fff;
+  border-radius: 10px;
+}
